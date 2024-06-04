@@ -56,13 +56,13 @@ variable "region" {
 variable "access_key" {
   type = string
   sensitive = true
-  default = "AKIAVRUVVETM77EESRBX"
+  default = ""
 }
 
 variable "secret_key" {
   type = string
   sensitive = true
-  default = "1mDbaD8Mzc/TdcHuAw0SQNwZJmMhZv37wms7ylFA"
+  default = ""
 }
 
 variable "ami" {
