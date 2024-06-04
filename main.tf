@@ -8,7 +8,7 @@ resource "aws_instance" "linux-server-iit" {
   ami = var.ami
   instance_type = var.instance_type
   key_name = var.key_name
-  vpc_security_group_ids = [aws_security_group.lab6_security_group.id]
+  vpc_security_group_ids = [aws_security_group.security_group.id]
   user_data = <<-EOF
     #!bin/bash
     sudo yum update -y #
@@ -23,7 +23,7 @@ resource "aws_instance" "linux-server-iit" {
     EOF
 }
 
-resource "aws_security_group" "lab6_security_group" {
+resource "aws_security_group" "security_group" {
   name = "launch-wizard-2"
   description = "Allow ssh and http traffic"
   vpc_id = var.vpc_id
@@ -68,7 +68,7 @@ variable "secret_key" {
 variable "ami" {
   type = string
   sensitive = true
-  default = ""
+  default = "ami-0d3a2960fcac852bc"
 }
 
 variable "instance_type" {
