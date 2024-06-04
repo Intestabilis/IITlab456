@@ -50,7 +50,7 @@ resource "aws_security_group" "lab6_security_group" {
 variable "region" {
   type = string
   sensitive = true
-  default = "eu-north-1b"
+  default = "eu-north-1"
 }
 
 variable "access_key" {
